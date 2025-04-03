@@ -1,34 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GVS Cattle Web App</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding-top: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GVS Cattle Management & Data Analytics Web App</title>
+<style>
+    body {
+        font-family: Montserrat, Arial,sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e4e2df; /* Light gray background */
+    }
+
+    .container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background-color: #213421; /* Dark green header */
+        color: white;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    header img {
+        height: 50px; /* Adjust as needed */
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-section {
+        width: 55%;
+    }
+
+    .right-section {
+        width: 40%;
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .step img {
+        height: 50px; /* Adjust as needed */
+    }
+
+    .sign-in-container { /* Added container for the sign-in box */
+    background-color: #213421;
+    border: 1px solid #213421;
+    border-radius: 5px;
+    padding: 20px;
+    opacity: 1; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Fade-in transition */
+    box-sizing: border-box; /* Important: Include padding and border in the width */
+    }
+
+    .sign-in-container.show { /* Class to trigger the fade-in */
+        opacity: 0.1;
+    }
+
+    .sign-in-options {
+        margin-top: 0;
+    }
+
+    .sign-in-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #e4e2df;
+        box-sizing: border-box; /* Important: Include padding and border in the width */
+    }
+
+    .sign-in-button:hover {
+        background-color: #f0f0f0;
+    }
+
+    .or-separator {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .or-text { /* New class for the "or" text */
+        color: #e4e2df; /* Darker gray color */
+        font-size: 0.9em; /* Slightly smaller font size */
+    }
+
+    .no-account-text { /* New class for the paragraph */
+        color: #e4e2df; /* Darker gray color */
+        text-align: center; /* Center the text */
+    }
+
+    .no-account-text a { /* Style the link */
+        color: #007bff; /* Bootstrap-like blue */
+        text-decoration: none; /* Remove underline */
+    }
+
+    .no-account-text a:hover {
+        text-decoration: underline; /* Add underline on hover */
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 10px;
+        font-size: 0.8em;
+        color: #777;
+    }
+</style>
 </head>
 <body>
-    <h1>Welcome to GVS Cattle Web App</h1>
-    <p>This is the landing page for the GVS Web App.</p>
-    <p>
-        <a href="https://your-fastapi-backend.run.app/login/google">Login with Google</a>
-        <a href="https://your-fastapi-backend.run.app/login/outlook">Login with Outlook</a>
-    </p>
+
+<header>
+    <div class="container">
+        <img src="index/gvs_logo.png" alt="GVS Logo">  <!-- Replace with your actual logo image -->
+    </div>
+</header>
+
+<div class="container">
+    <h1>GVS Cattle App</h1>
+    <hr>
+
+    <div class="main-content">
+        <div class="left-section">
+            <p>Welcome to the GVS Cattle Management & Data Analytics Web App</p>
+            
+
+            <div class="steps">
+                <div class="step">
+                    <img src="index/person_100dp.png" alt="Sign In Icon">  <!-- Replace with your actual icon -->
+                    <p><b>1. SIGN IN</b></p>
+                </div>
+                <div class="step">
+                    <img src="index/info_100dp.png" alt="Read Info Icon">  <!-- Replace with your actual icon -->
+                    <p><b>2. MORE INFORMATION</b></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h2>SIGN IN</h2>
+            <div class="sign-in-container" id="signInContainer">  <!-- Added the sign-in container -->
+                <div class="sign-in-options">
+                    <a href="#" class="sign-in-button">
+                        <img src="index/email_icon.png" alt="Email Icon" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+                        Sign in with your e-mail
+                    </a>
+                    <a href="#" class="sign-in-button">
+                        <img src="index/google_logo.png" alt="Google Logo" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+                        Sign in with Google
+                    </a>
+                    <a href="#" class="sign-in-button apple-button">
+                        <img src="index/Apple_logo_black.svg" alt="apple Logo" style="height: 1em; vertical-align: middle; margin-right: 5px;">
+                        Sign in with Apple
+                    </a>
+                    <div class="or-separator">
+                        <span class="or-text">or</span>
+                    </div>
+                    <p class="no-account-text">Don't have an account yet? <a href="#">Create it now</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Should you have any technical issues with the application, please e-mail us at <a href="mailto:jj.rincon@grupo-vensanto.com">jj.rincon@grupo-vensanto.com</a>
+</footer>
+
 </body>
 </html>
