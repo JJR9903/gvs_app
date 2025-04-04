@@ -259,39 +259,72 @@
     /* Media query for smaller screens */
     @media (max-width: 768px) {
 
-    .nav-left {
-        display: none; /* Oculta los enlaces en pantallas pequeñas */
-    }
+        .nav-left {
+            display: none; /* Oculta los enlaces en pantallas pequeñas */
+        }
 
-    .nav-right {
-        justify-content: flex-end; /* Alinea los íconos a la derecha */
-    }
+        .nav-right {
+            justify-content: flex-end; /* Alinea los íconos a la derecha */
+        }
 
-    .navbar {
-        flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
-    }
+        .navbar {
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+        }
 
-    .dropdown-content {
-        position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
-        top: 100%; /* Asegúrate de que aparezca debajo del botón */
-        left: 0;
-    }
-    .sign-in-options {
-        width: 95%;
-        padding: 15px;
-    }
+        .dropdown-content {
+            position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
+            top: 100%; /* Asegúrate de que aparezca debajo del botón */
+            left: 0;
+        }
+        .sign-in-options {
+            width: 95%;
+            padding: 15px;
+        }
 
-    .sign-in-options button {
-        font-size: 14px;
-    }
+        .sign-in-options button {
+            font-size: 14px;
+        }
 
-    .sign-in-container {
+        .sign-in-container {
             position: static;
             margin-top: 20px;
         }
     }   
 
     @media (max-width: 480px) {
+
+        .nav-left {
+            display: none; /* Oculta los enlaces en pantallas pequeñas */
+        }
+
+        .nav-right {
+            justify-content: flex-end; /* Alinea los íconos a la derecha */
+        }
+
+        .navbar {
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+        }
+
+        .dropdown-content {
+            position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
+            top: 100%; /* Asegúrate de que aparezca debajo del botón */
+            left: 0;
+        }
+
+        .sign-in-options {
+            width: 95%;
+            padding: 15px;
+        }
+
+        .sign-in-options button {
+            font-size: 14px;
+        }
+
+        .sign-in-container {
+            position: static;
+            margin-top: 20px;
+        }
+
         .logo img {
             height: 30px; /* Reduce el tamaño del logo */
         }
@@ -299,6 +332,7 @@
         .search-btn img {
             width: 20px; /* Reduce el tamaño del ícono de búsqueda */
         }
+
     }
 
     
