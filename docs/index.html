@@ -1,362 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GVS Cattle Management & Data Analytics Web App</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-    * {
-    font-family: 'Inter', sans-serif !important;
-    }
-
-    body {
-        font-family: 'Inter', sans-serif;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: #ffffff; /* White background */
-        margin-top: 60px; /* Prevent overlap with fixed header */
-    }
-
-    header {
-        height: 10%; /* Adjust height as needed */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background-color: #2C5F34; /* Dark green header */
-        color: white;
-        padding: 0;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    }
-
-    .container {
-        width: 95%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0;
-        box-sizing: border-box; 
-    }
-
-    .navbar {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #2C5F34;
-        color: white;
-        position: relative;
-    }
-
-    .nav-left {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 10%;
-    }
-
-    .nav-links li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.5em;
-    }
-
-    .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropbtn {
-        background-color: #2C5F34;
-        color: white;
-        padding: 15px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .dropbtn img {
-    width: 30px;
-    height: auto;
-    display: block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #06402B;
-        min-width: 100px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px; /* Rounded corners */
-        color: white;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown-content a {
-        color: white;
-        padding: 8px;
-        display: block;
-        text-decoration: none;
-    }
-
-    .search-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .search-btn img {
-        width: 30px; /* Adjust as needed */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .logo img {
-        height: 10%; /* Adjust as needed */
-    }
-
-    h1 {
-        margin-top: 100px;
-        font-size: 2.5em; /* Increased font size */
-        margin-bottom: 10px;
-    }
-
-    .main-content {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .left-section {
-        width: 55%;
-        position: relative;
-    }
-
-    .right-section {
-        width: 40%;
-    }
-
-    .steps {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin-top: 30px;
-    }
-
-    .step {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .step img {
-        height: 50px; /* Adjust as needed */
-    }
-
-    .sign-in-container {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        top: 10px;
-        right: 0;
-    }
-
-    .sign-in-options {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #2C5F34; /* Dark green */
-        padding: 20px;
-        margin-top: 0;
-        border-radius: 10px;
-        width: 100%; /* Responsive width */
-        max-width: 500px; /* Avoids stretching */
-    }
-
-    .sign-in-button {
-        display: block;
-        width: 100%;
-        padding: 15px; /* Increased padding */
-        margin: 5px 0;
-        margin-bottom: 10px;
-        text-align: center;
-        text-decoration: none;
-        color: #333;
-        border: 1px solid #2C5F34;
-        border-radius: 10px; /* Rounded corners */
-        background-color: white; /* Lighter green background */
-        box-sizing: border-box; /* Important: Include padding and border in the width */
-    }
-
-    .sign-in-button:hover {
-        background: linear-gradient(90deg, #45a049, #3b8d3b); /* Gradiente sutil */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
-        transform: translateY(-2px); /* Efecto de elevación */
-        transition: all 0.3s ease; /* Transición suave */
-    }
-
-    .cta-button {
-        display: block;
-        width: 100%;
-        max-width: 500px; /* Igual que el contenedor de inicio de sesión */
-        padding: 15px;
-        margin: 20px auto 0; /* Centra el botón horizontalmente */
-        border: none;
-        border-radius: 10px; /* Igual que los botones de inicio de sesión */
-        background-color: #FFA500; /* Orange color */
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-    }
-
-    .cta-button:hover {
-        background-color: #e68a00; /* Slightly darker orange */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-
-    footer {
-        text-align: center;
-        margin-top: 30px;
-        padding: 10px;
-        font-size: 0.8em;
-        color: #777;
-    }
-
-    footer a {
-        color: #007bff; /* Bootstrap-like blue */
-        text-decoration: none; /* Remove underline */
-        margin: 0 10px; /* Space between links */
-    }
-
-    footer a:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
-
-    /* Media query for smaller screens */
-    @media (max-width: 768px) {
-
-        .nav-left {
-            display: none; /* Oculta los enlaces en pantallas pequeñas */
-        }
-
-        .nav-right {
-            justify-content: flex-end; /* Alinea los íconos a la derecha */
-        }
-
-        .navbar {
-            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
-        }
-
-        .dropdown-content {
-            position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
-            top: 100%; /* Asegúrate de que aparezca debajo del botón */
-            left: 0;
-        }
-        .sign-in-options {
-            width: 90%;
-            padding: 15px;
-        }
-
-        .left-section, .right-section {
-            width: 90%; /* Asegura que ocupen todo el ancho */
-        }
-
-        .sign-in-options button {
-            font-size: 14px;
-        }
-
-        .sign-in-container {
-            position: static;
-            margin-top: 20px;
-        }
-    }   
-
-    @media (max-width: 480px) {
-
-        .nav-left {
-            display: none; /* Oculta los enlaces en pantallas pequeñas */
-        }
-
-        .nav-right {
-            justify-content: flex-end; /* Alinea los íconos a la derecha */
-        }
-
-        .navbar {
-            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
-        }
-
-        .dropdown-content {
-            position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
-            top: 100%; /* Asegúrate de que aparezca debajo del botón */
-            left: 0;
-        }
-
-        .main-content {
-            flex-direction: column; /* Apila las secciones verticalmente */
-            gap: 20px; /* Añade espacio entre las secciones */
-        }
-
-        .left-section, .right-section {
-            width: 90%; /* Asegura que ocupen todo el ancho */
-        }
-
-        .left-section {
-            text-align: center; /* Centra el texto en pantallas pequeñas */
-        }
-
-        .sign-in-options {
-            width: 95%;
-            padding: 15px;
-        }
-
-        .sign-in-options button {
-            font-size: 14px;
-        }
-
-        .sign-in-container {
-            position: static;
-            margin-top: 20px;
-        }
-
-        .logo img {
-            height: 30px; /* Reduce el tamaño del logo */
-        }
-
-        .search-btn img {
-            width: 20px; /* Reduce el tamaño del ícono de búsqueda */
-        }
-
-    }
-
-    
-</style>
+    <link rel="stylesheet" href="general.css"> <!-- Link to your CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page_title">GVS App</title>
 </head>
 <body>
 
@@ -368,21 +16,22 @@
             </a>
             <div class="nav-left">
                 <ul class="nav-links">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><span id="about">Acerca</span></a></li>
+                    <li><a href="#"><span id="services">Servicios</span></a></li>
+                    <li><a href="#"><span id="contact">Contacto</span></a></li>
                 </ul>
             </div>
 
             <div class="nav-right">
                 <div class="dropdown">
                     <button class="dropbtn">
-                    <img src="index/lang_white.png" alt="language">
+                    <img src="index/lang_white.png" alt="language">                    
                     </button>
                     <div class="dropdown-content">
-                        <a href="#">English</a>
-                        <a href="#">Español</a>
+                        <button data-lang="es">Español</button>
+                        <button data-lang="en">English</button>
                     </div>
+                    <span id="current_lang">ES</span>
                 </div>
                 <button class="search-btn">
                     <img src="index/Search_white.png" alt="Search">
@@ -393,52 +42,52 @@
 </header>
 
 <div class="container">
-    <h1>GVS Cattle App</h1>
+    <h1 id="main_heading">GVS App de Gestion & Data Analytics Ganadera</h1>
     <hr>
 
     <div class="main-content">
         <div class="left-section">
-            <p style="font-size: 2em;">Smarter Cattle Management, Higher Productivity</p>  
-            <p style="font-size: 1.5em;">Unlock the power of data to optimize your herd's health, breeding, and performance.</p>
+            <p id="desc1" style="font-size: 2.0em;">Gestión Ganadera Inteligente, mayor Productividad</p>  
+            <p id="desc2" style="font-size: 1.5em;">Libere el poder de los datos para optimizar la salud, la reproducción y el rendimiento de su ganado.</p>
             
 
             <div class="steps">
                 <div class="step">
                     <img src="index/monitor_heart_green.png" alt="monitor_heart">  <!-- Replace with your actual icon -->
-                    <p><b>Monitor individual animal health</b></p>
+                    <p id="bullet1"><b>Monitoree la salud de sus animales</b></p>
                 </div>
                 <div class="step">
                     <img src="index/DNA_green.png" alt="DNA">  <!-- Replace with your actual icon -->
-                    <p><b>Optimize breeding programs</b></p>
+                    <p id="bullet2"><b>Optimice los programas de reproducción</b></p>
                 </div>
                 <div class="step">
                     <img src="index/monitoring_green.png" alt="Monitor">  <!-- Replace with your actual icon -->
-                    <p><b>Track growth and performance:</b></p>
+                    <p id="bullet3"><b>Realice un seguimiento del crecimiento y el rendimiento</b></p>
                 </div>
                 <div class="step">
                     <img src="index/cloud_sync_green.png" alt="cloud_sync">  <!-- Replace with your actual icon -->
-                    <p><b>Access your data anywhere, anytime</b></p>
+                    <p id="bullet4"><b>Acceda a sus datos en cualquier lugar, en cualquier momento</b></p>
                 </div>
             </div>
         </div>
 
         <div class="right-section">
-            <h2>Sign In</h2>
+            <h2 id="sign_in">Iniciar sesión</h2>
             <div class="sign-in-container" id="signInContainer">  <!-- Added the sign-in container -->
                 <div class="sign-in-options">
-                    <a href="#" class="sign-in-button">
+                    <a id="sign_in_email"  href="#" class="sign-in-button">
                         <img src="index/email_green.png" alt="Email Icon" style="height: 1em; vertical-align: middle; margin-right: 5px;">
-                        Sign in with your e-mail
+                        <span id="sign_in_email_text">Iniciar sesión con e-mail</span>
                     </a>
-                    <a href="#" class="sign-in-button">
+                    <a id="sign_in_google" href="#" class="sign-in-button">
                         <img src="index/google_logo.png" alt="Google Logo" style="height: 1em; vertical-align: middle; margin-right: 5px;">
-                        Sign in with Google
+                        <span id="sign_in_google_text">Iniciar sesión con Google</span>
                     </a>
                     <a href="#" class="sign-in-button apple-button">
                         <img src="index/Apple_logo_black.svg" alt="apple Logo" style="height: 1em; vertical-align: middle; margin-right: 5px;">
-                        Sign in with Apple
+                        <span id="sign_in_apple_text">Iniciar sesión con Apple</span>
                     </a>
-                    <button class="cta-button">Create your account now</button>
+                    <button class="cta-button">Crea una cuenta ahora</button>
                 </div>
             </div>
             
@@ -447,10 +96,12 @@
 </div>
 
 <footer>
-    <a href="mailto:jj.rincon@grupo-vensanto.com">Support</a> | 
-    <a href="#">Privacy Policy</a> | 
-    <a href="#">Terms of Service</a>
+    <a href="mailto:jj.rincon@grupo-vensanto.com"> <span id="suport">Soporte</span></a> |
+    <a href="#"> <span id="privacy_policy">Política de Privacidad</span></a> |
+    <a href="#"> <span id="terms_of_service">Términos de Servicio</span></a>
 </footer>
+
+<script src="index/language.js"></script>
 
 </body>
 </html>
