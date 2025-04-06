@@ -440,10 +440,6 @@
             margin-bottom: 10px;
         }
 
-        .logo img {
-            height: 20px; /* Reduce el tamaño del logo */
-        }
-
         .search-btn img {
             width: 20px; /* Reduce el tamaño del ícono de búsqueda */
         }
