@@ -81,6 +81,10 @@
         gap: 5px; 
     }
 
+    .dropdown-content.show {
+        display: block;
+      }
+
     .dropbtn {
         background-color: #2C5F34;
         color: #2C5F34;
@@ -88,7 +92,7 @@
         border: none;
         cursor: pointer;
         display: inline-flex; /* Asegura que el ícono esté alineado */
-    align-items: center; /* Alinea verticalmente el ícono */
+        align-items: center; /* Alinea verticalmente el ícono */
     }
 
     .dropbtn img {
@@ -375,7 +379,17 @@
         .sign-in-container {
             position: static;
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 90%;
         }
+
+        .signin-container button {
+            width: 100%;
+            margin-bottom: 10px;
+          }
 
         .logo img {
             height: 30px; /* Reduce el tamaño del logo */

@@ -4,6 +4,7 @@
       about:"Acerca",
       services:"Servicios",
       contact:"Contacto",
+      current_lang:"ES",
       main_heading:"GVS App de Gestion & Data Analytics Ganadera",
       desc1: "Gestión Ganadera Inteligente, mayor Productividad",
       desc2: "Libere el poder de los datos para optimizar la salud, la reproducción y el rendimiento de su ganado.",
@@ -23,6 +24,7 @@
       about:"About",
       services:"Services",
       contact:"Contact",
+      current_lang:"EN",
       main_heading:"GVS Cattle Management & Data Analytics App",
       desc1: "Smart Livestock Management, Increased Productivity",
       desc2: "Unlock the power of data to optimize livestock health, reproduction, and performance.",
@@ -61,7 +63,8 @@
         el.style.display = "block";
       }
     }
-
+    document.getElementById("language_dropdown").classList.remove("show");
+    
   }
 
   // Set the language based on currentLanguage variable
