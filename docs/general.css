@@ -83,7 +83,7 @@
 
     .dropdown-content.show {
         display: block;
-      }
+    }
 
     .dropbtn {
         background-color: #2C5F34;
@@ -313,6 +313,10 @@
             width: 100%; /* Asegura que ocupe todo el ancho */
         }
 
+        .logo img {
+            height: 30px; /* Reduce el tamaño del logo */
+        }
+
         .nav-left {
             display: none; /* Oculta los enlaces en pantallas pequeñas */
         }
@@ -369,6 +373,10 @@
             flex-direction: column; /* Apila los elementos del navbar */
             align-items: center;
             width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+
+        .logo img {
+            height: 30px; /* Reduce el tamaño del logo */
         }
 
         .nav-left {
@@ -439,10 +447,6 @@
             width: 100%;
             margin-bottom: 10px;
           }
-
-        .logo img {
-            height: 30px; /* Reduce el tamaño del logo */
-        }
 
         .search-btn img {
             width: 20px; /* Reduce el tamaño del ícono de búsqueda */
