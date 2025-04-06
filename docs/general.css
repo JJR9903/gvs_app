@@ -298,16 +298,36 @@
     /* Media query for smaller screens */
     @media (max-width: 768px) {
 
+        header {
+            display: flex;
+            flex-direction: column; /* Apila los elementos verticalmente */
+            align-items: center; /* Centra los elementos */
+            padding: 10px;
+        }
+
+        .navbar {
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+            display: flex;
+            flex-direction: column; /* Apila los elementos del navbar */
+            align-items: center;
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
+
         .nav-left {
             display: none; /* Oculta los enlaces en pantallas pequeñas */
         }
 
         .nav-right {
+            display: flex;
             justify-content: flex-end; /* Alinea los íconos a la derecha */
+            gap: 15px; /* Espaciado entre los elementos */
+            width: 100%; /* Asegura que ocupe todo el ancho */
         }
 
-        .navbar {
-            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+        .dropdown {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .dropdown-content {
@@ -335,17 +355,46 @@
     }   
 
     @media (max-width: 480px) {
+        
+        header {
+            display: flex;
+            flex-direction: column; /* Apila los elementos verticalmente */
+            align-items: center; /* Centra los elementos */
+            padding: 10px;
+        }
+
+        .navbar {
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+            display: flex;
+            flex-direction: column; /* Apila los elementos del navbar */
+            align-items: center;
+            width: 100%; /* Asegura que ocupe todo el ancho */
+        }
 
         .nav-left {
             display: none; /* Oculta los enlaces en pantallas pequeñas */
         }
 
         .nav-right {
+            display: flex;
             justify-content: flex-end; /* Alinea los íconos a la derecha */
+            gap: 15px; /* Espaciado entre los elementos */
+            width: 100%; /* Asegura que ocupe todo el ancho */
         }
 
-        .navbar {
-            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+        .dropdown {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropbtn img {
+            width: 24px; /* Ajusta el tamaño del ícono */
+            height: auto;
+        }
+
+        #current_lang {
+            font-size: 1em; /* Ajusta el tamaño del texto */
         }
 
         .dropdown-content {
@@ -368,7 +417,7 @@
         }
 
         .sign-in-options {
-            width: 95%;
+            width: 90%;
             padding: 15px;
         }
 
