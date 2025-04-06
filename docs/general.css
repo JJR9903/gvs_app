@@ -305,6 +305,10 @@
             padding: 10px;
         }
 
+        .logo img {
+            height: 10%; /* Adjust as needed */
+        }
+
         .navbar {
             flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
             display: flex;
@@ -361,6 +365,10 @@
             flex-direction: column; /* Apila los elementos verticalmente */
             align-items: center; /* Centra los elementos */
             padding: 10px;
+        }
+
+        .logo img {
+            height: 10%; /* Adjust as needed */
         }
 
         .navbar {
