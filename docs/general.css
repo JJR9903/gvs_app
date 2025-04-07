@@ -300,7 +300,7 @@
 
         header {
             display: flex;
-            flex-direction: column; /* Apila los elementos verticalmente */
+            /*flex-direction: column; /* Apila los elementos verticalmente */
             align-items: center; /* Centra los elementos */
             padding: 10px;
         }
@@ -362,7 +362,7 @@
         
         header {
             display: flex;
-            flex-direction: column; /* Apila los elementos verticalmente */
+            /*flex-direction: column; /* Apila los elementos verticalmente */
             align-items: center; /* Centra los elementos */
             padding: 10px;
         }
