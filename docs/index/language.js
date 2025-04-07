@@ -84,3 +84,16 @@
       document.getElementById('current_lang').textContent = lang.toUpperCase();
     });
   });
+
+  document.querySelectorAll('#language_dropdown button').forEach(button => {
+    button.addEventListener('click', () => {
+        const dropdown = document.getElementById('language_dropdown');
+        dropdown.style.display = 'none'; // Oculta el menú desplegable
+    });
+});
+
+// Vuelve a mostrar el menú desplegable al hacer hover en el botón principal
+document.querySelector('.dropbtn').addEventListener('mouseenter', () => {
+    const dropdown = document.getElementById('language_dropdown');
+    dropdown.style.display = 'block'; // Muestra el menú desplegable
+});
