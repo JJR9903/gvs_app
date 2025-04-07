@@ -301,6 +301,7 @@
 
         header {
             display: flex;
+            max-height: 15%;    
         }
 
         .logo img {
@@ -318,6 +319,7 @@
             display: flex;
             align-items: center;
             width: 100%; /* Asegura que ocupe todo el ancho */
+            max-height: 15%;
         }
 
         .nav-left {
