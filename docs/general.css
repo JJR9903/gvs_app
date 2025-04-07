@@ -14,7 +14,7 @@
     }
 
     header {
-        height: 10%; /* Adjust height as needed */
+        height: 15%; /* Adjust height as needed */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -144,17 +144,6 @@
         background: linear-gradient(90deg, #45a049, #3b8d3b); /* Gradiente sutil */
         color: white; /* Asegura que el texto siga siendo blanco */
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .search-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .search-btn img {
-        width: 30px; /* Adjust as needed */
-        height: auto; /* Maintain aspect ratio */
     }
 
     .logo img {
@@ -308,11 +297,6 @@
             height: 30px;
             max-height: 5%; /* Adjust as needed */
         }
-
-        .search-btn img {
-            width: 20px; /* Adjust as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
         
 
         .navbar {
@@ -367,9 +351,7 @@
         
         header {
             display: flex;
-            /*flex-direction: column; /* Apila los elementos verticalmente */
-            /*align-items: center; /* Centra los elementos */
-            /*padding: 10px;*/
+            max-height: 10%;    
         }
 
         .logo img {
@@ -378,9 +360,7 @@
         }
 
         .navbar {
-            /*flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
             display: flex;
-            /*flex-direction: column; /* Apila los elementos del navbar */
             align-items: center;
             width: 100%; /* Asegura que ocupe todo el ancho */
         }
@@ -452,10 +432,6 @@
         .signin-container button {
             width: 100%;
             margin-bottom: 10px;
-        }
-
-        .search-btn img {
-            width: 20px; /* Reduce el tamaño del ícono de búsqueda */
         }
 
     }
