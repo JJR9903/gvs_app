@@ -82,10 +82,6 @@
         gap: 5px; 
     }
 
-    .dropdown-content.show {
-        display: block;
-    }
-
     .dropbtn {
         background-color: #2C5F34;
         color: #2C5F34;
@@ -120,13 +116,20 @@
         z-index: 1;
         border-radius: 5px; /* Rounded corners */
         color: #2C5F34;
+        right: 0;
+        padding: 5px 0;
+    }
+
+    .dropdown-content.show {
+        display: block;
     }
 
     .dropdown:hover .dropdown-content {
         display: block;
     }
 
-    button[data-lang] {
+    button[data-lang],
+    button[dropdown_menu]{
         display: block;
         width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
         padding: 8px; /* Igual que los enlaces en .dropdown-content */
@@ -141,7 +144,8 @@
         transition: background-color 0.3s ease; /* Transición suave para el hover */
     }
 
-    button[data-lang]:hover {
+    button[data-lang]:hover,
+    button[dropdown_menu]:hover {
         background: linear-gradient(90deg, #45a049, #3b8d3b); /* Gradiente sutil */
         color: white; /* Asegura que el texto siga siendo blanco */
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -337,7 +341,7 @@
         .dropdown-content {
             position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
             top: 100%; /* Asegúrate de que aparezca debajo del botón */
-            left: 0;
+            right: 0;
         }
 
         .dropbtn_menu {
