@@ -420,6 +420,16 @@
             left: 0;
         }
 
+        .dropbtn_menu {
+            display: flex; /* Oculta los enlaces en pantallas pequeñas */
+        }
+
+        .dropbtn_menu img {
+            width: 25px;
+            height: auto;
+            display: block;
+        }
+
         .main-content {
             flex-direction: column; /* Apila las secciones verticalmente */
             gap: 20px; /* Añade espacio entre las secciones */
