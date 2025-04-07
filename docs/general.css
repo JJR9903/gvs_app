@@ -152,6 +152,16 @@
         max-height: 5%; /* Adjust as needed */
     }
 
+    .dropbtn_menu {
+        background-color: #2C5F34;
+        color: #2C5F34;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        display: none;
+        align-items: center; /* Alinea verticalmente el ícono */
+    }
+
     h1 {
         margin-top: 100px;
         font-size: 36px; /* Increased font size */
@@ -329,6 +339,18 @@
             top: 100%; /* Asegúrate de que aparezca debajo del botón */
             left: 0;
         }
+
+        .dropbtn_menu {
+            display: flex; /* Oculta los enlaces en pantallas pequeñas */
+        }
+
+        .dropbtn_menu img {
+            width: 25px;
+            height: auto;
+            display: block;
+        }
+
+
         .sign-in-options {
             width: 90%;
             padding: 15px;
