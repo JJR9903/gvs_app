@@ -164,7 +164,7 @@
 
     h1 {
         margin-top: 100px;
-        font-size: 2.5em; /* Increased font size */
+        font-size: 36px; /* Increased font size */
         margin-bottom: 10px;
     }
 
@@ -301,9 +301,6 @@
 
         header {
             display: flex;
-            /*flex-direction: column; /* Apila los elementos verticalmente */
-            /*align-items: center; /* Centra los elementos */
-            /*padding: 10px;*/
         }
 
         .logo img {
@@ -311,10 +308,14 @@
             max-height: 5%; /* Adjust as needed */
         }
 
+        .search-btn img {
+            width: 20px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        
+
         .navbar {
-            /*flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
             display: flex;
-            /*flex-direction: column; /* Apila los elementos del navbar */
             align-items: center;
             width: 100%; /* Asegura que ocupe todo el ancho */
         }
