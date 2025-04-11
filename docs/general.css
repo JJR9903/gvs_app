@@ -210,7 +210,7 @@
         align-items: center;
         gap: 10px;
         top: 10px;
-        right: 0;
+        right: 10px;
     }
 
     .sign-in-options {
@@ -301,7 +301,7 @@
     }
 
     /* Media query for smaller screens */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
 
         header {
             display: flex;
@@ -342,6 +342,10 @@
             position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
             top: 100%; /* Asegúrate de que aparezca debajo del botón */
             right: 0;
+            right: auto;
+            width: 90%; /* Make it occupy most of the screen width */
+            margin: 0 auto; /* Center it horizontally */
+            box-sizing: border-box;
         }
 
         .dropbtn_menu {
@@ -354,121 +358,63 @@
             display: block;
         }
 
-
-        .sign-in-options {
-            width: 90%;
-            padding: 15px;
+        #menu_dropdown { /* solo este */
+            width: 100%; /* Ensure it fits within the screen */
+            right: 0;
+        }
+    
+        #menu_dropdown button { /* solo este */
+            width: 100%; /* Ensure buttons take full width */
+            text-align: center; /* Center-align the text */
         }
 
-        .left-section, .right-section {
-            width: 90%; /* Asegura que ocupen todo el ancho */
-        }
-
-        .sign-in-options button {
-            font-size: 14px;
-        }
-
-        .sign-in-container {
-            position: static;
-            margin-top: 20px;
-        }
-    }   
-
-    @media (max-width: 480px) {
-        
-        header {
-            display: flex;
-            max-height: 25%;
-        }
-
-        .logo img {
-            height: 30px;
-            max-height: 5%; /* Adjust as needed */
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            width: 100%; /* Asegura que ocupe todo el ancho */
-        }
-
-        .nav-left {
-            display: none; /* Oculta los enlaces en pantallas pequeñas */
-        }
-
-        .nav-right {
-            display: flex;
-            justify-content: flex-end; /* Alinea los íconos a la derecha */
-            gap: 15px; /* Espaciado entre los elementos */
-            width: 100%; /* Asegura que ocupe todo el ancho */
-        }
-
-        .dropdown {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .dropbtn img {
-            width: 24px; /* Ajusta el tamaño del ícono */
-            height: auto;
-        }
-
-        #current_lang {
-            font-size: 1em; /* Ajusta el tamaño del texto */
-        }
-
-        .dropdown-content {
-            position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
-            top: 100%; /* Asegúrate de que aparezca debajo del botón */
-            left: 0;
-        }
-
-        .dropbtn_menu {
-            display: flex; /* Oculta los enlaces en pantallas pequeñas */
-        }
-
-        .dropbtn_menu img {
-            width: 25px;
-            height: auto;
-            display: block;
-        }
-
-        .main-content {
+        .main-content { 
             flex-direction: column; /* Apila las secciones verticalmente */
             gap: 20px; /* Añade espacio entre las secciones */
+            margin-left: auto;
+            margin-right: auto; /* Centering the main content */
+            align-items: center;
         }
 
         .left-section, .right-section {
             width: 90%; /* Asegura que ocupen todo el ancho */
-        }
-
-        .left-section {
-            text-align: center; /* Centra el texto en pantallas pequeñas */
-        }
-
-        .sign-in-options {
-            width: 90%;
-            padding: 15px;
-        }
-
-        .sign-in-options button {
-            font-size: 14px;
+            text-align: center;
         }
 
         .sign-in-container {
-            position: static;
-            margin-top: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center-align the container */
+            justify-content: center; /* Center-align vertically if needed */
+            padding: 20px;
+            margin: 0 auto; /* Center horizontally */
+            max-width: 100%; /* Set a wider maximum width */
+            width: 100%; /* Ensure it adapts to smaller screens */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        .sign-in-options {
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #2C5F34; /* Dark green */
             padding: 20px;
-            max-width: 90%;
+            border-radius: 10px; /* Rounded corners */
+            width: 100%; /* Full width within the container */
+            max-width: 100%; /* Avoid stretching too much */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
 
-        .signin-container button {
+        .sign-in-options button {
+            font-size: 14px;
+        }
+
+        .cta-button {
+            margin: 20px auto 0;
             width: 100%;
-            margin-bottom: 10px;
+            max-width: 100%;
         }
 
-    }
+
+    }   
