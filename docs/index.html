@@ -85,6 +85,16 @@
             <h2 id="sign_in">Iniciar sesión</h2>
             <div class="sign-in-container" id="signInContainer">  <!-- Added the sign-in container -->
                 <div class="sign-in-options">
+                    <form class="sign-in-form">
+                        <label for="email" id="label_email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Correo Electrónico">
+                        
+                        <label for="password" id="label_password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" placeholder="Contraseña">
+                            <img src="icons/visibility_gray.png" alt="Show Password" class="toggle-password">
+                        </div>
+                    </form>
                     <a id="sign_in_email"  href="#" class="sign-in-button">
                         <img src="icons/email_green.png" alt="Email Icon" style="height: 1em; vertical-align: middle; margin-right: 5px;">
                         <span id="sign_in_email_text">Iniciar sesión con e-mail</span>
@@ -112,6 +122,7 @@
 </footer>
 
 <script src="index/language.js"></script>
+<script src="index/password.js"></script>
 
 </body>
 </html>

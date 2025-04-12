@@ -16,12 +16,16 @@
       bullet3: "<b>Realice un seguimiento del crecimiento y el rendimiento</b>",
       bullet4: "<b>Acceda a sus datos en cualquier lugar, en cualquier momento</b>",
       sign_in: "Iniciar sesión",
-      sign_in_email_text: "Iniciar sesión con e-mail",
+      label_email: "Correo Electrónico",
+      email: "Correo Electrónico",
+      label_password: "Contraseña",
+      password: "Contraseña",
+      sign_in_email_text: "Iniciar sesión con E-mail",
       sign_in_google_text: "Iniciar sesión con Google",
       sign_in_apple_text: "Iniciar sesión con Apple",
       support: "Soporte",
       privacy_policy: "Política de privacidad",
-      terms_of_service: "Términos de servicio",
+      terms_of_service: "Términos de servicio"
     },
     en: {
       about:"About",
@@ -39,12 +43,16 @@
       bullet3: "<b>Track growth and performance</b>",
       bullet4: "<b>Access your data anytime, anywhere</b>",
       sign_in: "Sign In",
-      sign_in_email_text: "Sign in with e-mail",
+      label_email: "E-mail Address",
+      email: "E-mail Address",
+      label_password: "Password",
+      password: "Password",
+      sign_in_email_text: "Sign in with E-mail",
       sign_in_google_text: "Sign in with Google",
       sign_in_apple_text: "Sign in with Apple",
       support: "Support",
       privacy_policy: "Privacy Policy",
-      terms_of_service: "Terms of Service",
+      terms_of_service: "Terms of Service"
     }
   };
 
@@ -66,15 +74,16 @@
       const el = document.getElementById(key);
       if (el) {
         el.innerHTML = content[key];
+        el.placeholder = content[key];
         el.style.display = "block";
       }
     }
-    document.getElementById("language_dropdown").classList.remove("show");
-    
+    document.getElementById("language_dropdown").classList.remove("show");    
   }
 
   // Set the language based on currentLanguage variable
   setLanguage(currentLanguage);
+
 
   const buttons = document.querySelectorAll("[data-lang]");
   buttons.forEach(button => {
