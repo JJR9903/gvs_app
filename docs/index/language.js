@@ -96,11 +96,7 @@
     });
   });
 
-// Toggle dropdown visibility on button click
-document.querySelector(".dropbtn").addEventListener("click", () => {
-  const dropdown = document.getElementById("language_dropdown");
-  dropdown.classList.toggle("show");
-});
+
 
   // Toggle dropdown visibility on button click
   document.addEventListener("DOMContentLoaded", () => {
