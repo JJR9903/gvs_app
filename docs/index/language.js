@@ -101,3 +101,21 @@ document.querySelector(".dropbtn").addEventListener("click", () => {
   const dropdown = document.getElementById("language_dropdown");
   dropdown.classList.toggle("show");
 });
+
+  // Toggle dropdown visibility on button click
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropBtn = document.querySelector(".dropbtn");
+    const dropdown = document.getElementById("language_dropdown");
+
+    if (dropBtn && dropdown) {
+      dropBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent this click from closing the dropdown immediately
+        dropdown.classList.toggle("show");
+      });
+    }
+
+    // Close the dropdown if clicking outside
+    document.addEventListener("click", () => {
+      dropdown.classList.remove("show");
+    });
+  });

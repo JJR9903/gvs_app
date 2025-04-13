@@ -87,7 +87,12 @@
                 <div class="sign-in-options">
                     <form class="sign-in-form">
                         <label for="email" id="label_email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Correo Electrónico">
+                        <input type="email" id="email" name="email" placeholder="Correo Electrónico"
+                        required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        oninvalid="this.setCustomValidity('Please enter a valid E-mail like name@example.com')"
+                        oninput="this.setCustomValidity('')"
+                        >
                         
                         <label for="password" id="label_password">Password</label>
                         <div class="password-wrapper">
