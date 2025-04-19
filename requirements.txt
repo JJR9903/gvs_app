@@ -1,0 +1,11 @@
+nicegui
+fastapi
+uvicorn[standard]
+sqlalchemy
+asyncpg
+httpx
+python-dotenv
+pydantic
+email-validator
+python-jose
+js

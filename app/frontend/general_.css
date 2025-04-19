@@ -10,7 +10,7 @@
         margin: 0;
         padding: 0;
         background-color: #ffffff; /* White background */
-        margin-top: 60px; /* Prevent overlap with fixed header */
+        margin-top: 60px !important; /* Prevent overlap with fixed header */
     }
 
     
@@ -43,13 +43,12 @@
 
     .navbar {
         width: 100%;
-        height: 100%;
+        height: 60px;
         position: flex;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0; /* Elimina cualquier padding adicional */
-        margin: 0; /* Elimina cualquier margen adicional */
+        padding: 0 10px; /* Elimina cualquier padding adicional */        margin: 0; /* Elimina cualquier margen adicional */
         box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
         background-color: #2C5F34;
         color: white;
@@ -65,10 +64,12 @@
         max-width: 20%;
     }
 
-    .logo img {
+    .logo img {        
         height: 30px;
-        max-height: 5%; /* Adjust as needed */
-       
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+        margin: 5px;
     }
 
     .nav-left {
@@ -86,20 +87,41 @@
     .nav-links li a {
         color: white;
         text-decoration: none;
-        font-size: 1.1em;
+        font-size: 1.5em;
     }
 
     .nav-right {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 10px;
+        gap: 5px;
         margin-left: auto;
         padding-right: 10px;
+        height: 100%;
+    }
+
+    #c14, #c15{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 60px;
+        gap: 10px;
+        margin-left: auto;
+    }
+
+    .notification-icon img {
+        height: 30px;
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+        margin: 5px;
     }
 
     .dropdown {
         position: relative;
+        top: 0;
+        left:0;
         display: inline-block;
         align-items: center;
         vertical-align: middle;
@@ -107,120 +129,8 @@
         z-index: 2000;
     }
 
-    .dropbtn_lang {
-        background-color: #2C5F34;
-        color: #2C5F34;
-        padding: 15px;
-        border: none;
-        cursor: pointer;
-        display: inline-flex; /* Asegura que el ícono esté alineado */
-        align-items: center; /* Alinea verticalmente el ícono */
-    }
 
-    .dropbtn_lang img {
-        width: 30px;
-        height: auto;
-        display: block;
-        z-index: 2000;
-    }
 
-    #current_lang {
-        display: inline-block; /* Asegura que se comporte como un elemento en línea */
-        vertical-align: middle; /* Alinea verticalmente con los íconos */
-        font-size: 1.2em; /* Ajusta el tamaño de fuente para que coincida con los íconos */
-        font-weight: bold; /* Opcional: hace que el texto sea más visible */
-        color: white; /* Asegura que el color sea consistente con el diseño */
-        margin-left: 5px; /* Añade un pequeño espacio entre el texto y el ícono */
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        min-width: 100px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px; /* Rounded corners */
-        color: #2C5F34;
-        right: 0;
-        padding: 5px 0;
-        top: 100%;
-    }
-
-    .dropdown-content button {
-        width: 100%;
-        padding: 12px 16px;
-        text-align: left;
-        border: none;
-        background: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    .dropdown-content.show {
-        display: block;
-    }
-
-    .notification-icon img {
-        height: 30px;
-        border-radius: 50%;
-        margin: 5px 5px;
-        cursor: pointer;
-    }
-
-    .dropbtn_account {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 15px;
-    }
-
-    .dropbtn_account img {
-        height: 30px;
-        border-radius: 50%; /* optional: if using a profile photo */
-        margin: 0 0;
-        cursor: pointer;
-    }
-
-    button[data-lang],
-    button[dropdown_menu],
-    button[account_dropbtn] {
-        display: block;
-        width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
-        padding: 8px; /* Igual que los enlaces en .dropdown-content */
-        background-color: white; /* Fondo verde oscuro */
-        color: #283618; /* Texto blanco */
-        border: none; /* Sin bordes */
-        text-align: left; /* Alinea el texto a la izquierda */
-        text-decoration: none; /* Sin subrayado */
-        border-radius: 5px; /* Bordes redondeados */
-        cursor: pointer; /* Cambia el cursor a pointer */
-        font-size: 1em; /* Tamaño de fuente consistente */
-        transition: background-color 0.3s ease; /* Transición suave para el hover */
-    }
-
-    button[data-lang]:hover,
-    button[dropdown_menu]:hover,
-    button[account_dropbtn]:hover {
-        background: linear-gradient(90deg, #45a049, #3b8d3b); /* Gradiente sutil */
-        color: white; /* Asegura que el texto siga siendo blanco */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    
-    .dropbtn_menu {
-        background-color: #2C5F34;
-        color: #2C5F34;
-        padding: 15px;
-        border: none;
-        cursor: pointer;
-        display: none;
-        align-items: center; /* Alinea verticalmente el ícono */
-    }
 
     .layout-container {
         display: flex;

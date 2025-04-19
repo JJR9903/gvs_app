@@ -1,0 +1,88 @@
+from nicegui import ui
+
+
+def apply_custom_styles():
+    with open('app/frontend/general.css') as f:
+        ui.add_head_html(f'<style>{f.read()}</style>')
+
+def layout_wrapper(content_function):
+    apply_custom_styles()
+    
+    ui.html(f'''
+    
+            <header>
+                <div class="container">
+                    <nav class="navbar">
+                        <a href="MainDashboard.html" class="logo">
+                            <img src="icons/gvs_logo.png" alt="GVS Logo">  <!-- Replace with your actual logo image -->
+                        </a>
+                        <div class="nav-left">
+                            <ul class="nav-links">
+                                <li><a href="#"><span id="about">Acerca</span></a></li>
+                                <li><a href="#"><span id="services">Servicios</span></a></li>
+                                <li><a href="#"><span id="contact">Contacto</span></a></li>
+                            </ul>
+                        </div>
+
+                    
+
+                        <div class="nav-right">
+                            <div class="dropdown">
+                                <button class="dropbtn_lang">
+                                    <img src="icons/lang_white.png" alt="language">  
+                                    <span id="current_lang">ES</span>                  
+                                </button>
+                                <div id="language_dropdown" class="dropdown-content">
+                                    <button data-lang="es">Español</button>
+                                    <button data-lang="en">English</button>
+                                </div>
+                            </div>
+                            <div class="notification-icon">
+                                <img src="icons/notifications_white.png" alt="notifications">
+                            </div>
+                            <div class="dropdown">
+                                <button class="dropbtn_account">
+                                    <img src="icons/account_circle_white.png" alt="account">
+                                </button>
+                                <div id="account_dropdown" class="dropdown-content">
+                                    <button account_dropbtn="Profile">Mi Perfil</button>
+                                    <button account_dropbtn="Settings">Configuración</button>
+                                    <button account_dropbtn="Logout">Cerrar sesión</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </nav>
+                </div>
+            </header>
+    ''')
+
+    with ui.row().classes('layout-container'):
+        ui.html(f'''
+                    <aside class="sidebar">
+                        <ul class="sidebar-menu">
+                            <li><a href="MainDashboard.html"><img src="icons/analytics_white.png" alt=""><span> Dashboard</span></a></li>
+                            <li><a href="#"><img src="icons/ID_white.png" alt=""><span> Perfil Animal</span></a></li>
+                            <li><a href="#"><img src="icons/DNA_white.png" alt=""><span> Genética y Crianza</span></a></li>
+                            <li><a href="#"><img src="icons/fence_white.png" alt=""><span> Gestión de Cercados</span></a></li>
+                            <li><a href="#"><img src="icons/Weight_white.png" alt=""><span> Registro de Peso </span></a></li>
+                            <li><a href="#"><img src="icons/health_metrics_white.png" alt=""><span> Historial de Salud</span></a></li>
+                            <li><a href="#"><img src="icons/grass_white.png" alt=""><span> Nutrición</span></a></li>
+                            <li><a href="#"><img src="icons/truck_white.png" alt=""><span> Gestión de Transporte</span></a></li>
+                            <li><a href="#"><img src="icons/Operations_white.png" alt=""><span> Gestión de Operaciones</span></a></li>
+                        </ul>
+                    </aside>
+        ''')
+        
+        with ui.column().classes('main-content'):
+            content_function()
+
+
+def default_layout(title: str):
+    with ui.header().classes('bg-primary text-white'):
+        ui.label(title).classes('text-h5')
+    with ui.left_drawer().classes('bg-grey-2'):
+        ui.link('Dashboard', '/dashboard')
+        ui.link('Tables', '/tables')
+        ui.link('Home', '/')

@@ -1,5 +1,212 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+* {
+font-family: 'Inter', sans-serif !important;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* White background */
+    margin-top: 60px; /* Prevent overlap with fixed header */
+}
+
+header {
+    height: 60px; /* Adjust height as needed */
+    max-height: 20%; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #2C5F34; /* Dark green header */
+    color: white;
+    padding: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.container {
+    width: 95%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2C5F34;
+    color: white;
+    position: relative;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10%;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    gap: 5px; 
+    z-index: 2000;
+}
+
+.dropbtn {
+    background-color: #2C5F34;
+    color: #2C5F34;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex; /* Asegura que el ícono esté alineado */
+    align-items: center; /* Alinea verticalmente el ícono */
+}
+
+.dropbtn img {
+    width: 25px;
+    height: auto;
+    display: block;
+    z-index: 2000;
+}
+
+#current_lang {
+    display: inline-block; /* Asegura que se comporte como un elemento en línea */
+    vertical-align: middle; /* Alinea verticalmente con los íconos */
+    font-size: 1.2em; /* Ajusta el tamaño de fuente para que coincida con los íconos */
+    font-weight: bold; /* Opcional: hace que el texto sea más visible */
+    color: white; /* Asegura que el color sea consistente con el diseño */
+    margin-left: 5px; /* Añade un pequeño espacio entre el texto y el ícono */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2C5F34;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px; /* Rounded corners */
+    color: #2C5F34;
+    right: 0;
+    padding: 5px 0;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+button[data-lang],
+button[dropdown_menu]{
+    display: block;
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    padding: 8px; /* Igual que los enlaces en .dropdown-content */
+    background-color: #2C5F34; /* Fondo verde oscuro */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    text-align: left; /* Alinea el texto a la izquierda */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    font-size: 1em; /* Tamaño de fuente consistente */
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+button[data-lang]:hover,
+button[dropdown_menu]:hover {
+    background: linear-gradient(90deg, #45a049, #3b8d3b); /* Gradiente sutil */
+    color: white; /* Asegura que el texto siga siendo blanco */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    height: 30px;
+    max-height: 5%; /* Adjust as needed */
+}
+
+.dropbtn_menu {
+    background-color: #2C5F34;
+    color: #2C5F34;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center; /* Alinea verticalmente el ícono */
+}
+
+h1 {
+    margin-top: 100px;
+    font-size: 36px; /* Increased font size */
+    margin-bottom: 10px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+footer {
+    display: inline-flex; /* Mantiene los elementos en línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 0.8em;
+    color: #777;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+
+}
+
+footer a {
+    justify-content: center;
+    text-align: center;
+    color: #007bff; /* Bootstrap-like blue */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Space between links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
 
 .left-section {
     width: 55%;
@@ -139,49 +346,122 @@
     /* Media query for smaller screens */
     @media (max-width: 992px) {
 
-        .left-section, .right-section {
-            width: 90%; /* Asegura que ocupen todo el ancho */
-            text-align: center;
-        }
+    .left-section, .right-section {
+        width: 90%; /* Asegura que ocupen todo el ancho */
+        text-align: center;
+    }
 
-        .sign-in-container {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center-align the container */
-            justify-content: center; /* Center-align vertically if needed */
-            padding: 20px;
-            margin: 0 auto; /* Center horizontally */
-            max-width: 100%; /* Set a wider maximum width */
-            width: 100%; /* Ensure it adapts to smaller screens */
-            box-sizing: border-box; /* Include padding in width calculation */
-        }
+    .sign-in-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-align the container */
+        justify-content: center; /* Center-align vertically if needed */
+        padding: 20px;
+        margin: 0 auto; /* Center horizontally */
+        max-width: 100%; /* Set a wider maximum width */
+        width: 100%; /* Ensure it adapts to smaller screens */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
 
-        #label_email,#label_password{
-            align-items: left;
-            text-align: left;
-        }
+    #label_email,#label_password{
+        align-items: left;
+        text-align: left;
+    }
 
-        .sign-in-options {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #2C5F34; /* Dark green */
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners */
-            width: 100%; /* Full width within the container */
-            max-width: 100%; /* Avoid stretching too much */
-            box-sizing: border-box; /* Include padding in width calculation */
-        }
+    .sign-in-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #2C5F34; /* Dark green */
+        padding: 20px;
+        border-radius: 10px; /* Rounded corners */
+        width: 100%; /* Full width within the container */
+        max-width: 100%; /* Avoid stretching too much */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
 
-        .sign-in-options button {
-            font-size: 14px;
-        }
+    .sign-in-options button {
+        font-size: 14px;
+    }
 
-        .cta-button {
-            margin: 20px auto 0;
-            width: 100%;
-            max-width: 100%;
-        }
+    .cta-button {
+        margin: 20px auto 0;
+        width: 100%;
+        max-width: 100%;
+    }
 
+
+    header {
+        display: flex;
+        max-height: 25%;    
+    }
+
+    .logo img {
+        height: 30px;
+        max-height: 5%; /* Adjust as needed */
+    }
+
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        max-height: 15%;
+    }
+
+    .nav-left {
+        display: none; /* Oculta los enlaces en pantallas pequeñas */
+    }
+
+    .nav-right {
+        display: flex;
+        justify-content: flex-end; /* Alinea los íconos a la derecha */
+        gap: 15px; /* Espaciado entre los elementos */
+        width: 100%; /* Asegura que ocupe todo el ancho */
+    }
+
+    .dropdown {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .dropdown-content {
+        position: absolute; /* Ajusta el menú desplegable para pantallas pequeñas */
+        top: 100%; /* Asegúrate de que aparezca debajo del botón */
+        right: 0;
+        right: auto;
+        width: 90%; /* Make it occupy most of the screen width */
+        margin: 0 auto; /* Center it horizontally */
+        box-sizing: border-box;
+    }
+
+    .dropbtn_menu {
+        display: flex; /* Oculta los enlaces en pantallas pequeñas */
+    }
+
+    .dropbtn_menu img {
+        width: 25px;
+        height: auto;
+        display: block;
+    }
+
+    #menu_dropdown { /* solo este */
+        width: 100%; /* Ensure it fits within the screen */
+        right: 0;
+    }
+
+    #menu_dropdown button { /* solo este */
+        width: 100%; /* Ensure buttons take full width */
+        text-align: center; /* Center-align the text */
+    }
+
+    .main-content { 
+        flex-direction: column; /* Apila las secciones verticalmente */
+        gap: 20px; /* Añade espacio entre las secciones */
+        margin-left: auto;
+        margin-right: auto; /* Centering the main content */
+        align-items: center;
+    }
     }
